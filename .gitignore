@@ -1,0 +1,42 @@
+# gitignore
+
+# Editors
+.vscode/
+*.profraw
+
+# Trash
+.DS_Store
+Thumbs.db
+
+# secrets
+*.*key
+*.pem
+*.pgp
+*.pub
+.config.env
+.decrypted~*
+# .decrypted~*.yaml
+.env
+.envrc
+
+# temp / working files & dirs
+*.bak
+*.iso
+*.log
+*.old
+*.zip
+.direnv/
+.logs/
+.task/
+.temp*
+TODO.md
+
+#extras
+.venv
+*pytest*
+*cache*
+node_modules/
+
+# retain files
+!.gitkeep
+!.gitignore
