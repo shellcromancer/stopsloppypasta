@@ -1,56 +1,85 @@
-# gitignore
-
-# git
-.worktrees/
-
-# dot-directories, unless explicitly kept
+# -------------------------------------------------------
+# Dot-directories: ignore all, allowlist what we track
+# -------------------------------------------------------
 .*/
+!.claude/
 !.github/
+!.specs/
+!.renovate/
 
-# Editors
-.vscode/
-*.profraw
-
-# Trash
+# -------------------------------------------------------
+# OS
+# -------------------------------------------------------
 .DS_Store
 Thumbs.db
 
-# secrets
+# -------------------------------------------------------
+# Secrets & environment
+# -------------------------------------------------------
+.env
+.envrc
 *.*key
 *.pem
 *.pgp
 *.pub
 .config.env
 .decrypted~*
-# .decrypted~*.yaml
-.env
-.envrc
 
-# temp / working files & dirs
+# -------------------------------------------------------
+# AI tooling (local/personal files only)
+# -------------------------------------------------------
+CLAUDE.md
+CLAUDE.local.md
+.claude/settings.local.json
+docs/superpowers/
+
+# -------------------------------------------------------
+# Editors
+# -------------------------------------------------------
+*.profraw
+
+# -------------------------------------------------------
+# Python
+# -------------------------------------------------------
+__pycache__/
+*.py[cod]
+*.egg-info/
+.coverage
+.coverage.*
+
+# -------------------------------------------------------
+# Dependencies & build output
+# -------------------------------------------------------
+node_modules/
+build/
+dist/
+site/
+**/cache/
+
+# -------------------------------------------------------
+# Temp, logs, & working files
+# -------------------------------------------------------
 *.bak
-*.iso
 *.log
 *.old
 *old*
+*.iso
 *.zip
-.direnv/
-.logs/
-.task/
 .temp*
+.task/
+.logs/
 TODO.md
 
-#extras
-.venv
-*pytest*
-*cache*
-node_modules/
-
-# ai
-docs/superpowers
-
-# generated files
+# -------------------------------------------------------
+# Repo-specific
+# -------------------------------------------------------
+.worktrees/
 _site/
 
-# retain files
+# -------------------------------------------------------
+# Retain (must be last -- negations override above)
+# -------------------------------------------------------
 !.gitkeep
 !.gitignore
+!.env.example
+!.env.sample
